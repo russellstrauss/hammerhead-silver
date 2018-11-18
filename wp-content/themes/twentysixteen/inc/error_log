@@ -1,0 +1,2 @@
+[30-Oct-2018 20:04:58 America/Chicago] PHP Fatal error:  Call to undefined function is_admin() in /home1/hammerhead/public_html/wp-content/themes/twentysixteen/inc/template-tags.php on line 169
+[03-Nov-2018 20:29:59 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentysixteen/inc/customizer.php on line 61

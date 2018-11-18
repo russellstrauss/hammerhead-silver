@@ -1,0 +1,9 @@
+[25-Oct-2018 21:31:59 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 01:26:43 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[26-Oct-2018 05:05:51 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 06:27:12 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/customizer.php on line 70
+[26-Oct-2018 10:33:28 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[26-Oct-2018 10:33:29 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[09-Nov-2018 05:48:45 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[09-Nov-2018 08:35:54 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[09-Nov-2018 08:55:42 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home1/hammerhead/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
