@@ -1,12 +1,15 @@
 /* Imports */
 // This project uses inverted triangle CSS architecture (https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 
+// Base WordPress Theme
+@import 'base-theme';
+
 // global
 @import 'vars';
 @import 'mixins';
 @import 'elements';
 @import 'global';
 
-//@import 'components/';
+@import 'components/about';
 
 @import 'helpers';

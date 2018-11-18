@@ -1,1 +1,8 @@
 // Global class-based selectors, put all bare element styling in elements.scss
+
+#site-logo {
+	
+	@include tablet {
+		width: 50%;
+	}
+}

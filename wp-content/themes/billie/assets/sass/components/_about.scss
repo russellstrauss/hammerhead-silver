@@ -1,0 +1,28 @@
+.about-page {
+	
+	h1 {
+		text-align: center;
+	}
+	
+	.featured-image {
+		
+		img {
+	
+			@include tablet {			
+				width: 50%;
+				float: left;
+			}
+		}
+		
+	}
+	
+	.the-content {
+		
+		@include tablet {
+			margin-top: 100px;
+			width: 50%;
+			float: left;
+			padding-left: 20px;
+		}
+	}
+}
