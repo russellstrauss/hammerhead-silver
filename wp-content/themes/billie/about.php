@@ -12,9 +12,6 @@
 	<main id="main" class="site-main" role="main">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header>
 
 			<div class="entry-content">
 				<div class="featured-image">
@@ -26,18 +23,19 @@
 				</div>
 				
 				<div class="the-content">
-					<?php
-					if ( have_posts() ) {
-						while ( have_posts() ) {
-							the_post(); 
-
-							the_content(); 
+					<div class="text-content">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						
+						<?php
+						if ( have_posts() ) {
+							while ( have_posts() ) {
+								the_post(); 
+								the_content(); 
+							}
 						}
-					}
-					?>	
+						?>	
+					</div>
 				</div>
-				
-				<div class="clearfix"></div>
 							
 				<?php
 				wp_link_pages( array(
