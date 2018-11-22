@@ -1,5 +1,9 @@
 footer {
 	
+	@include tablet {
+		padding-bottom: 40px;
+	}
+	
 	.widget-area {
 		width: 100%;
 		text-align: center;

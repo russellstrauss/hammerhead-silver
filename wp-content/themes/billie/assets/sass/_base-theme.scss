@@ -350,18 +350,6 @@ input[type="submit"]:hover {
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
@@ -679,6 +667,7 @@ content:'';
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
+		outline: none;
 	}
 	
 	.main-navigation{ position: relative !important;}
@@ -905,7 +894,6 @@ li a:before{
 	vertical-align: top;
 	list-style: none;
 	position: relative;
-	margin: 0 0.5em 35px 0.5em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;   
 	box-sizing: border-box;	
@@ -1026,12 +1014,12 @@ table#wp-calendar,
 	background-size: 60% !important;
 }
 
-.site-branding{
-	margin-top: 50px;
+.site-branding {
 	margin-right: auto;
 	margin-left: auto;
-	position:relative;
-	z-index:400;
+	position: relative;
+	z-index: 400;
+	margin-top: 20px;
 }
 
 @media screen and (max-width: 767px){
@@ -1086,12 +1074,12 @@ table#wp-calendar,
 	color: black;
 }
 
-.site-description{
+.site-description {
 	font-size: 28px;
 	font-size: 2.8rem;
 	font-family: 'Montserrat', sans-serif;
-	text-transform:uppercase;
-	margin-top: 50px;
+	text-transform: uppercase;
+	margin-top: 15px;
 	margin-bottom: 30px;
 }
 
@@ -1166,7 +1154,7 @@ table#wp-calendar,
 	float:none;
 }
 
-.site-branding form{
+.site-branding form {
 	width:30%;
 	border:1px solid rgba(255,255,255,0.3);
 	padding:1em;

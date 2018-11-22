@@ -1,6 +1,4 @@
 Database changes
 
--Change About page template
--create shop front page and set template
--shop front link in header
--remove page content from "Shop" page
+-Add rings category
+-Add Product categories to above shop widget

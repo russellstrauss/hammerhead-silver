@@ -1,6 +1,47 @@
 <?php
+
+// Disable plugin notifications
+remove_action('load-update-core.php','wp_update_plugins');
+add_filter('pre_site_transient_update_plugins','__return_null');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
- * billie functions and definitions
+ * billie functions and definitions ================================== All Billie theme related methods below, default with the theme.
  *
  * @package billie
  */
@@ -95,6 +136,7 @@ if ( get_theme_mod( 'billie_hide_title') =="" ){
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function billie_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => __( 'Sidebar for posts', 'billie' ),
 		'id'            => 'sidebar-1',
@@ -106,17 +148,6 @@ function billie_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Front page Sidebar', 'billie' ),
-		'id'            => 'sidebar-3',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-
-	register_sidebar( array(
 		'name'          => __( 'Footer widget area', 'billie' ),
 		'id'            => 'sidebar-2',
 		'description'   => '',
@@ -125,11 +156,11 @@ function billie_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
-
+	
 	register_sidebar( array(
-		'name'          => __( 'Footer copyright area', 'billie' ),
-		'id'            => 'sidebar-copyright',
-		'description'   => __( 'Place a text widget in this area and add your copyright text', 'billie'),
+		'name'          => __( 'Above Shop', 'billie' ),
+		'id'            => 'above-shop-section',
+		'description'   => __( 'This section will show above the products in the shop.', 'billie'),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',

@@ -25,14 +25,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'social',  'fallback_cb' => false, 'depth'=>1, 'link_before'=>'<span class="screen-reader-text">', 'link_after'=>'</span>') ); ?>
 			</nav><!-- #social-menu -->
 		<?php }; ?>
-
-		<div class="site-info">
-			<?php
-			if ( is_active_sidebar( 'sidebar-copyright' ) ) {
-				 dynamic_sidebar( 'sidebar-copyright' ); 
-			}
-			?>
-		</div><!-- .site-info -->
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

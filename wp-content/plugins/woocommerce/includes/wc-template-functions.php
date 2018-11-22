@@ -751,6 +751,18 @@ if ( ! function_exists( 'woocommerce_result_count' ) ) {
 	}
 }
 
+if ( ! function_exists( 'woocommerce_above_products' ) ) {
+
+	/**
+	 * Output the result count text (Showing x - x of x results).
+	 *
+	 * @subpackage	Loop
+	 */
+	function woocommerce_above_products() {
+		wc_get_template( 'loop/above-products.php' );
+	}
+}
+
 if ( ! function_exists( 'woocommerce_catalog_ordering' ) ) {
 
 	/**
