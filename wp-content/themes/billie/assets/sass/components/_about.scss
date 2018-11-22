@@ -12,6 +12,9 @@
 	article {
 		$padding: 30px;
 		padding: $padding;
+		max-width: 1000px;
+		display: block;
+		margin: auto;
 		
 		.entry-content {
 			margin: 0;
