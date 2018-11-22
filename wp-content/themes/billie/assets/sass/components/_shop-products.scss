@@ -1,7 +1,18 @@
 .jewelry-shop {
+	max-width: 1200px;
+	display: block;
+	margin: 0 auto;
 	
 	.woocommerce-breadcrumb {
 		display: none;
+	}
+	
+	h1 {
+		//display: none;
+	}
+	
+	.term-description {
+		margin-bottom: 40px;
 	}
 	
 	.above-shop-section {
@@ -15,6 +26,26 @@
 				display: inline-block;
 				margin: 0 20px;
 			}
+		}
+	}
+	
+	.woocommerce-result-count {
+		font-size: 12px;
+	}
+	
+	// Remove to show Sort By dropdown
+	.woocommerce-ordering {
+		display: none;
+	}
+}
+
+// Shopping cart
+.woocommerce {
+	
+	.cart {
+		
+		.coupon {
+			display: none;
 		}
 	}
 }

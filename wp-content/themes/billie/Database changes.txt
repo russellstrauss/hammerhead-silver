@@ -1,4 +1,8 @@
 Database changes
 
--Add rings category
+-Add rings category; add other categories
 -Add Product categories to above shop widget
+-Convert all artist categories to tags
+
+Todo
+Allow categories to be filtered separately between artists

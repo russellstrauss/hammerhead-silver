@@ -14,14 +14,14 @@
 		<div class="shop-front">
 			
 			<div class="profile-pics">
-				<a href="<?php echo get_site_url(); ?>/index.php/product-category/dustin/">
+				<a href="<?php echo get_site_url(); ?>/index.php/product-tag/dustin/">
 					<div class="jewelry-page-link dustin" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/dustin-page-photo.jpg);">
 						<div class="overlay"></div>
 						<div class="text">Dustin</div>
 					</div>
 				</a>
 				
-				<a href="<?php echo get_site_url(); ?>/index.php/product-category/hillary/">
+				<a href="<?php echo get_site_url(); ?>/index.php/product-tag/hillary/">
 					<div class="jewelry-page-link hillary" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/hillary-page-photo.jpg);">
 						<div class="overlay"></div>
 						<div class="text">Hillary</div>
