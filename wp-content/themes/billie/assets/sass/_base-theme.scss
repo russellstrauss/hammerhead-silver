@@ -571,7 +571,7 @@ a:active {
 	padding:9px;
 	font-size:14px;
 	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
+	font-family: 'Montserrat', sans-serif;
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 	z-index:99; 
@@ -898,23 +898,22 @@ li a:before{
 ----------------------------*/
 .widget-area{padding:20px 12px 12px 12px;}
 
-.widget{
-	font-size:14px;
-	font-size:1.4rem;
-	display:inline-block;
+.widget {
+	font-size: 14px;
+	font-size: 1.4rem;
+	display: inline-block;
 	vertical-align: top;
 	list-style: none;
-	position:relative;
-	margin:0 0.5em 35px 0.5em;
+	position: relative;
+	margin: 0 0.5em 35px 0.5em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;   
 	box-sizing: border-box;	
-	width:100%;
-	text-align:left;
+	width: 100%;
 }
 
 .widget-title,
-.widgettitle{
+.widgettitle {
 	margin:0;
 	padding-bottom:7px;
 	font-size:16px;
@@ -1015,23 +1014,6 @@ table#wp-calendar,
 	clear:both;
 }
 
-.site-footer .widget-area{
-	text-align:center;
-}
-
-.site-footer .widget{
-	display:inline-block;
-	vertical-align: top;
-	list-style: none;
-	position:relative;
-	padding:0 18px 0 18px;
-	margin:0 0.5em  45px 0.5em;
-	width:22%;
-	box-shadow:none;
-	background:none;
-	border:none;
-}
-
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -1055,6 +1037,7 @@ table#wp-calendar,
 @media screen and (max-width: 767px){
 	.site-branding {
 		margin-top: 0;
+		padding: 0 15px;
 	}
 	
 	.woocommerce ul.products li.product .add_to_cart_button {
@@ -1109,6 +1092,7 @@ table#wp-calendar,
 	font-family: 'Montserrat', sans-serif;
 	text-transform:uppercase;
 	margin-top: 50px;
+	margin-bottom: 30px;
 }
 
 .site-title{
@@ -1162,11 +1146,9 @@ table#wp-calendar,
 }
 
 .site-content .widget-area {
-	margin:105px auto;
-	width: 25%;
-	padding:5px 2% 0 4%;
-	text-align:left;
-	display:inline-block;
+	margin: 105px auto;
+	padding: 5px 2% 0 4%;
+	display: inline-block;
 	vertical-align: top;
 }
 
@@ -1940,7 +1922,7 @@ span.bbp-admin-links a,
 		border: 0;
 		background: none;
 		box-shadow: none;
-		margin: 10px;
+		margin: 0;
 	}
 	
 	.menu-toggle:before {

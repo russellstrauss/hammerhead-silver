@@ -34,3 +34,7 @@ $desktop-large-width: 1200px;
 		@content;
 	}
 }
+
+@mixin Montserrat {
+	font-family: 'Montserrat', sans-serif;
+}

@@ -9,6 +9,8 @@
 	}
 	
 	.entry-content {
+		margin: 0;
+		
 		@include tablet {
 			display: flex;
 			
