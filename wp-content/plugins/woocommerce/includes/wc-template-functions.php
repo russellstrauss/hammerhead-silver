@@ -732,7 +732,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 		global $post;
 
 		if ( has_post_thumbnail() ) {
-			return get_the_post_thumbnail( $post->ID, $size );
+			return get_the_post_thumbnail( $post->ID, 900 );
 		} elseif ( wc_placeholder_img_src() ) {
 			return wc_placeholder_img( $size );
 		}
@@ -748,6 +748,18 @@ if ( ! function_exists( 'woocommerce_result_count' ) ) {
 	 */
 	function woocommerce_result_count() {
 		wc_get_template( 'loop/result-count.php' );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_cart_link' ) ) {
+
+	/**
+	 * Output the result count text (Showing x - x of x results).
+	 *
+	 * @subpackage	Loop
+	 */
+	function woocommerce_cart_link() {
+		wc_get_template( 'loop/cart-link.php' );
 	}
 }
 

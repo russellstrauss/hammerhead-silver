@@ -74,7 +74,6 @@ add_action( 'woocommerce_archive_description', 'woocommerce_product_archive_desc
  * @see woocommerce_result_count()
  * @see woocommerce_catalog_ordering()
  */
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_above_products', 20 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 

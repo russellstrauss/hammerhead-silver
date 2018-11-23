@@ -32,48 +32,49 @@
 	<?php
 	}
 	?>
-		<div class="site-branding">	
-			<?php //billie_the_site_logo(); ?>
-			
-			<img id="site-logo" src="<?php header_image(); ?>" alt="logo" />
-			
-			<?php if (display_header_text() ) {	?>
-				<?php if (get_bloginfo('description') <> '') {	?>
-					<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-				<?php }	?>
+	<div class="site-branding">	
+		<?php //billie_the_site_logo(); ?>
+		
+		<img id="site-logo" src="<?php header_image(); ?>" alt="logo" />
+		
+		<?php if (display_header_text() ) {	?>
+			<?php if (get_bloginfo('description') <> '') {	?>
+				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+			<?php }	?>
 
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<?php }else{ /*If there is no visible site title, make sure there is still a h1 for screen reader*/	?>
-					<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
-			<?php } ?>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+		<?php }else{ /*If there is no visible site title, make sure there is still a h1 for screen reader*/	?>
+				<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
+		<?php } ?>
 
-			<?php if( !get_theme_mod( 'billie_hide_action' ) ) {
-						if( get_theme_mod( 'billie_action_text' ) ) {	
-							echo '<div id="action">';
-							if( get_theme_mod( 'billie_action_link' ) ) {
-								echo '<a href="' . esc_url( get_theme_mod( 'billie_action_link' ) ) .'">';
-							}
-							echo esc_html( get_theme_mod( 'billie_action_text' ) );
-							if( get_theme_mod( 'billie_action_link' )) {
-								echo '</a>';
-							}
-							echo '</div>';
-						}else{
-							if ( is_user_logged_in() ) {
-								echo '<div id="action">';
-								echo '<a href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">' . __("Click here to setup your Call to Action", 'billie') . '</a>';
-								echo '</div>';
-						 	}
+		<?php if( !get_theme_mod( 'billie_hide_action' ) ) {
+					if( get_theme_mod( 'billie_action_text' ) ) {	
+						echo '<div id="action">';
+						if( get_theme_mod( 'billie_action_link' ) ) {
+							echo '<a href="' . esc_url( get_theme_mod( 'billie_action_link' ) ) .'">';
 						}
-						?>
-				<?php
+						echo esc_html( get_theme_mod( 'billie_action_text' ) );
+						if( get_theme_mod( 'billie_action_link' )) {
+							echo '</a>';
+						}
+						echo '</div>';
+					}else{
+						if ( is_user_logged_in() ) {
+							echo '<div id="action">';
+							echo '<a href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">' . __("Click here to setup your Call to Action", 'billie') . '</a>';
+							echo '</div>';
+						}
+					}
+					?>
+			<?php
+		}
+			if ( !get_theme_mod('billie_hide_search') ){
+				get_search_form();
 			}
-				if ( !get_theme_mod('billie_hide_search') ){
-					get_search_form();
-				}
-				?>
+			?>
 
-			</div><!-- .site-branding -->
+		</div><!-- .site-branding -->
+			
 	</header><!-- #masthead -->
 	
 	<div id="content" class="site-content">

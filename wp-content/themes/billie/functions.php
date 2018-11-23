@@ -4,27 +4,9 @@
 remove_action('load-update-core.php','wp_update_plugins');
 add_filter('pre_site_transient_update_plugins','__return_null');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Add Above shop widget to woocommerce template
+add_action( 'woocommerce_before_shop_loop', 'woocommerce_above_products', 10 );
+add_action( 'woocommerce_before_shop_loop', 'woocommerce_cart_link', 10 );
 
 
 
