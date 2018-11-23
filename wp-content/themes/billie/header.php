@@ -75,6 +75,17 @@
 
 		</div><!-- .site-branding -->
 			
+		<?php
+		if (WC()->cart->get_cart_contents_count() > 0) {
+
+		echo '<div class="hammerhead-checkout">';
+			echo '<a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
+				echo '<span>checkout ' . sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ) . '</span>';
+				echo '<img src="' . get_template_directory_uri() . '/assets/img/bling-shark.svg" alt="cart-checkout" />';
+			echo '</a>';
+		echo '</div>';
+		} ?>
 	</header><!-- #masthead -->
 	
+		
 	<div id="content" class="site-content">

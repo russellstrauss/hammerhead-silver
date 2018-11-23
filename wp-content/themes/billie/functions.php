@@ -5,27 +5,21 @@ remove_action('load-update-core.php','wp_update_plugins');
 add_filter('pre_site_transient_update_plugins','__return_null');
 
 // Add Above shop widget to woocommerce template, third parameter is "priority"
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_above_products_markup', 10 );
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_cart_link_markup', 10 );
+add_action( 'woocommerce_before_shop_loop', 'add_product_categories');
+function add_product_categories() {
+	echo'<div class="above-shop-section">';
+	dynamic_sidebar( 'above-shop-section' );
+	echo '</div>';
+}
 
-// Add widget above cart, such as policies
-add_action( 'woocommerce_after_cart_table', 'add_policies_widget' );
+// Add policies widget below cart
+add_action('woocommerce_after_cart_table', 'add_policies_widget');
 function add_policies_widget() {
 
 	echo '<div class="policies">';
 	dynamic_sidebar('return-policies-section');
 	echo '</div>';
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

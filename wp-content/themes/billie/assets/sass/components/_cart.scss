@@ -117,10 +117,14 @@
 						
 						.shipping {
 							
-							.shipping-calculator-form {
+							.woocommerce-shipping-calculator {
+								display: none;
 								
-								.button {
-									@include black-button;
+								.shipping-calculator-form {
+									
+									.button {
+										@include black-button;
+									}
 								}
 							}
 						}

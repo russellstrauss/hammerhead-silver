@@ -1,6 +1,8 @@
 $tabletMenuFontSize: 14px;
 
 .main-navigation {
+	padding-left: 0;
+	padding-right: 0;
 	
 	@include tablet-only {
 		margin-left: 120px;
@@ -9,8 +11,8 @@ $tabletMenuFontSize: 14px;
 	}
 	
 	@include desktop {
-		margin-left: 200px;
-		margin-right: 200px;
+		margin-left: 220px;
+		margin-right: 220px;
 		width: auto;
 	}
 	
@@ -51,11 +53,12 @@ $tabletMenuFontSize: 14px;
 }
 
 .hammerhead-checkout {
+	text-align: center;
 	
 	@include mobile-only {
 		border-radius: 6px;
 		border: 1px solid black;
-		margin: 20px 0;
+		margin: 15px;
 	}
 	
 	@include tablet {
@@ -71,7 +74,7 @@ $tabletMenuFontSize: 14px;
 	}
 	
 	@include desktop {
-		width: 200px;
+		width: 240px;
 		top: 25px;
 	}
 	
@@ -88,7 +91,7 @@ $tabletMenuFontSize: 14px;
 			margin: 0 auto;
 			
 			@include mobile-only {
-				width: 160px;
+				width: 250px;
 			}
 		}
 		
