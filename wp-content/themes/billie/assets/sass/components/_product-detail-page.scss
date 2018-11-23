@@ -1,5 +1,11 @@
 .jewelry-shop {
 	
+	.woocommerce-error {
+		
+		@include alert;
+		margin-left: 20px;
+	}
+	
 	div.product {
 		
 		div.summary {

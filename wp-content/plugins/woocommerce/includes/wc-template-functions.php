@@ -751,26 +751,38 @@ if ( ! function_exists( 'woocommerce_result_count' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woocommerce_cart_link' ) ) {
+if ( ! function_exists( 'woocommerce_cart_link_markup' ) ) {
 
 	/**
 	 * Output the result count text (Showing x - x of x results).
 	 *
 	 * @subpackage	Loop
 	 */
-	function woocommerce_cart_link() {
+	function woocommerce_cart_link_markup() {
 		wc_get_template( 'loop/cart-link.php' );
 	}
 }
 
-if ( ! function_exists( 'woocommerce_above_products' ) ) {
+if ( ! function_exists( 'woocommerce_above_cart_markup' ) ) {
+
+	/**
+	 * Output above cart markup, such as return policies.
+	 *
+	 * @subpackage	Loop
+	 */
+	function woocommerce_above_cart_markup() {
+		wc_get_template( 'loop/above-cart.php' );
+	}
+}
+
+if ( ! function_exists( 'woocommerce_above_products_markup' ) ) {
 
 	/**
 	 * Output the result count text (Showing x - x of x results).
 	 *
 	 * @subpackage	Loop
 	 */
-	function woocommerce_above_products() {
+	function woocommerce_above_products_markup() {
 		wc_get_template( 'loop/above-products.php' );
 	}
 }

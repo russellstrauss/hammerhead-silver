@@ -1,0 +1,8 @@
+.main-navigation {
+	
+	@include tablet {
+		margin-left: 200px;
+		margin-right: 200px;
+		width: auto;
+	}
+}

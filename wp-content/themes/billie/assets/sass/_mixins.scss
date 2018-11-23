@@ -42,15 +42,37 @@ $desktop-large-width: 1200px;
 @mixin black-button {
 	background-color: black;
 	color: #fff;
-	font-size: 22px;
+	font-size: 16px;
 	display: block;
 	padding: 20px 50px;
 	border: 1px solid black;
 	transition: all 250ms ease;
 	text-align: center;
 	
+	@include mobile-only {
+		font-size: 22px;
+	}
+	
 	&:hover {
 		background-color: white;
+		color: black;
+	}
+}
+
+@mixin form-input-style {
+	border-radius: 3px;
+	border: 1px solid #666;
+	padding: 6px;
+}
+
+@mixin alert {
+	background-color: #f7f6f7;
+	border-top-color: black;
+	border: 1px solid black;
+	border-top-width: 3px;
+	border-radius: 0;
+	
+	&:before {
 		color: black;
 	}
 }

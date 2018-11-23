@@ -1,6 +1,6 @@
 <?php
 /**
- * Cart Link
+ * Result Count
  *
  * Shows text: Showing x - x of x results.
  *
@@ -27,15 +27,7 @@ if ( ! woocommerce_products_will_display() )
 	return;
 ?>
 
-<?php 
-if (WC()->cart->get_cart_contents_count() > 0) { ?>
-
-	<div class="hammerhead-checkout">
-		<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">
-			<span>checkout <?php echo sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/bling-shark.svg" alt="cart-checkout" />
-		</a>
-	</div>
-
-<?php 
-} ?>
+<h1>Above Cart</h1>
+<div class="above-cart-section">
+	<?php //dynamic_sidebar( 'above-cart-section' ); ?>
+</div>
