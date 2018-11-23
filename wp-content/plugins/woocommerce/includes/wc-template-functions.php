@@ -754,24 +754,12 @@ if ( ! function_exists( 'woocommerce_result_count' ) ) {
 if ( ! function_exists( 'woocommerce_cart_link_markup' ) ) {
 
 	/**
-	 * Output the result count text (Showing x - x of x results).
+	 * Add markup for the checkout cart link
 	 *
 	 * @subpackage	Loop
 	 */
 	function woocommerce_cart_link_markup() {
 		wc_get_template( 'loop/cart-link.php' );
-	}
-}
-
-if ( ! function_exists( 'woocommerce_above_cart_markup' ) ) {
-
-	/**
-	 * Output above cart markup, such as return policies.
-	 *
-	 * @subpackage	Loop
-	 */
-	function woocommerce_above_cart_markup() {
-		wc_get_template( 'loop/above-cart.php' );
 	}
 }
 

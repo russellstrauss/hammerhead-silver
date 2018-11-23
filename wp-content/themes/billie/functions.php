@@ -4,14 +4,46 @@
 remove_action('load-update-core.php','wp_update_plugins');
 add_filter('pre_site_transient_update_plugins','__return_null');
 
-// Add Above shop widget to woocommerce template
+// Add Above shop widget to woocommerce template, third parameter is "priority"
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_above_products_markup', 10 );
-add_action( 'woocommerce_before_cart', 'woocommerce_above_cart_markup', 20 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_cart_link_markup', 10 );
 
+// Add widget above cart, such as policies
+add_action( 'woocommerce_after_cart_table', 'add_policies_widget' );
+function add_policies_widget() {
+
+	echo '<div class="policies">';
+	dynamic_sidebar('return-policies-section');
+	echo '</div>';
+}
 
 
-remove_filter( 'woocommerce_ship_to_different_address_checked', 'filter_woocommerce_ship_to_different_address_checked', 10, 1 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -141,9 +173,9 @@ function billie_widgets_init() {
 	));
 	
 	register_sidebar( array(
-		'name'          => __( 'Above Cart', 'billie' ),
-		'id'            => 'above-cart-section',
-		'description'   => __( 'This section will show above the cart at check out.', 'billie'),
+		'name'          => __( 'Return Policies', 'billie' ),
+		'id'            => 'return-policies-section',
+		'description'   => __( 'This section will show below the cart at check out.', 'billie'),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',

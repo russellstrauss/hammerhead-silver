@@ -18,10 +18,8 @@ Todo
 
 -Allow categories to be filtered separately between artists
 -Don't route user straight to cart so they click on the bling shark
--Is shipping only allowed to US? Remove required USA value on checkout
--Remove default "ship to different address checkbox" on checkout
 -Style desktop and mobile menu better
 -Style category selection menu better
 -Change lightbox loader (hammerhead sharks twirling?)
--Shirnk bling shark and menu font size on tablet
 -Move policy section to above cart (Cart is in a different loop or something?)
+-Show bling shark on product detail page

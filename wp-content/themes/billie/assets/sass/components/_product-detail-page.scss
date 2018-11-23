@@ -1,7 +1,6 @@
 .jewelry-shop {
 	
-	.woocommerce-error {
-		
+	.woocommerce-error, .woocommerce-message {
 		@include alert;
 		margin-left: 20px;
 	}
