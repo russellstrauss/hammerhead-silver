@@ -732,7 +732,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 		global $post;
 
 		if ( has_post_thumbnail() ) {
-			return get_the_post_thumbnail( $post->ID, 900 );
+			return get_the_post_thumbnail( $post->ID, $size );
 		} elseif ( wc_placeholder_img_src() ) {
 			return wc_placeholder_img( $size );
 		}

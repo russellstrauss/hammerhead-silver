@@ -1210,12 +1210,12 @@ table#wp-calendar,
 .type-attachment,
 .post{
 	border-radius:4px; 
-	 padding:45px 65px;
+	padding: 30px;
 	display: block;
-	position:relative;
+	position: relative;
 	overflow: auto;
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
-	margin:0 0 65px 0;
+	margin :0 0 65px 0;
 	background:#fcfcfc;
 	line-height:1.8;
 }
@@ -1902,9 +1902,6 @@ span.bbp-admin-links a,
 }
 
 @media screen and (max-width: 767px) {
-	.woocommerce ul.products li.product {
-		width: 100%;
-	}
 	
 	.menu-toggle {
 		border: 0;

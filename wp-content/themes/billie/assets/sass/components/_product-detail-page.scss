@@ -1,10 +1,17 @@
 .jewelry-shop {
 	
-	.product {
+	div.product {
 		
-		.summary {
+		div.summary {
 			text-align: left;
 			margin: 0;
+			
+			&.entry-summary {
+				
+				@include mobile-only {
+					margin: 0 0 100px 0;
+				}
+			}
 		}
 		
 		.price {
@@ -35,17 +42,10 @@
 		}
 		
 		button.button.alt.single_add_to_cart_button {
-			background-color: black;
-			color: #fff;
-			font-size: 22px;
-			display: block;
-			padding: 20px 50px;
-			border: 1px solid black;
-			transition: all 250ms ease;
+			@include black-button;
 			
-			&:hover {
-				background-color: white;
-				color: black;
+			@include mobile-only {
+				width: 100%;
 			}
 		}
 	}

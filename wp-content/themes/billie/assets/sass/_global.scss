@@ -7,3 +7,10 @@
 		max-width: 450px;
 	}
 }
+
+.woocommerce {
+	
+	a.button {
+		@include black-button;
+	}
+}

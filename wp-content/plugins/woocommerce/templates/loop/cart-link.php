@@ -27,22 +27,15 @@ if ( ! woocommerce_products_will_display() )
 	return;
 ?>
 
-<div class="checkout">
-	<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">
-		<span>checkout <?php echo sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/bling-shark.svg" alt="cart-checkout" />
-	</a>
-</div>
+<?php 
+if (WC()->cart->get_cart_contents_count() > 0) { ?>
 
-<div class="mobile-checkout">
-	<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopping-cart.svg" alt="checkout" />
-		<div class="count">
-			<?php 
-				if (WC()->cart->get_cart_contents_count() > 0) {
-					echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() );
-				}
-			?>
-		</div>
-	</a>
-</div>
+	<div class="checkout">
+		<a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">
+			<span>checkout <?php echo sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/bling-shark.svg" alt="cart-checkout" />
+		</a>
+	</div>
+
+<?php 
+} ?>

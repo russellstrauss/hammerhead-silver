@@ -1,0 +1,165 @@
+.checkout {
+	
+	@include mobile-only {
+		border-radius: 6px;
+		border: 1px solid black;
+		margin: 20px 0;
+	}
+	
+	@include tablet {
+		position: absolute;
+		right: 20px;
+		top: 25px;
+		width: 200px;
+		z-index: 999;
+		
+		&:hover {
+			opacity: .75;
+		}
+	}
+	
+	a {
+		display: block;
+		text-decoration: none;
+		
+		@include mobile-only {
+			padding: 20px;
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			
+			@include mobile-only {
+				width: 160px;
+			}
+		}
+		
+		span {
+			@include Montserrat;
+			color: black;
+			font-size: 22px;
+			text-transform: uppercase;
+			
+			@include mobile-only {
+				display: block;
+			}
+		}
+	}
+}
+
+.mobile-checkout {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 50px;
+	z-index: 9999;
+	display: none;
+	
+	@include tablet {
+		display: none;
+	}
+	
+	a {
+		display: block;
+		
+		.count {
+			position: absolute;
+			top: 12px;
+			left: 26px;
+			color: black;
+			font-size: 12px;
+			font-weight: bold;
+		}
+	}
+}
+
+.main-navigation {
+	
+	@include tablet {
+		margin-left: 200px;
+		margin-right: 200px;
+		width: auto;
+	}
+}
+
+.woocommerce-cart {
+	
+	main {
+		
+		article {
+			
+			h1 {
+				margin-top: 0;
+			}
+			
+			.cart {
+				
+				.cart_item {
+					
+					.product-remove {
+						
+						.remove {
+							margin: auto;
+							display: block;
+							color: transparent !important;
+							border-radius: 0;
+							background-image: url(assets/img/close-red.svg);
+							background-size: 100%;
+							background-position: center center;
+							opacity: .5;
+							
+							&:hover {
+								background-color: transparent;
+								opacity: 1;
+							}
+						}
+					}
+					
+					.product-thumbnail {
+						
+						img {
+							width: 300px;
+							display: block;
+							margin: 20px auto;
+						}
+					}
+				}
+				
+				.actions {
+					padding: 20px;
+					
+					.button {
+						@include black-button;
+						
+						&[type="submit"] {
+							float: right;
+						}
+					}
+				}
+			}
+			
+			.cart-collaterals {
+				
+				.cart_totals {
+					
+					.shop_table {
+						border-radius: 0;
+					}
+				}
+				
+				.wc-proceed-to-checkout {
+					text-align: right;
+					padding-top: 30px;
+					padding-bottom: 0;
+					
+					.button {
+						@include black-button;
+						display: inline-block;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

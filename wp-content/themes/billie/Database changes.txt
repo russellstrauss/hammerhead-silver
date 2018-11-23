@@ -10,6 +10,8 @@ Database changes
 	-hillarys_jewelry_background_image
 -Remove cart from woocommerce sidebar
 -Remove cart menu item from main menu
+-Deactivate plugins
+-Add regenerate thumbnails plugin
 
 Todo
 

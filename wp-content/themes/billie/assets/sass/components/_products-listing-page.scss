@@ -1,9 +1,25 @@
-.products {
+.jewelry-shop {
 	
-	.product {
+	ul.products {
 		
-		.add_to_cart_button {
-			display: none;
+		li.product {
+			
+			@include mobile-only {
+				display: block;
+				float: none;
+				width: 100%;
+			}
+			
+			a {
+				
+				img {
+					margin: 0;
+				}
+			}
+			
+			.add_to_cart_button {
+				display: none;
+			}
 		}
 	}
 }
