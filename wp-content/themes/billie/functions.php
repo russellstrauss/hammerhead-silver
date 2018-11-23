@@ -11,7 +11,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_cart_link_markup', 10 )
 
 
 
-
+remove_filter( 'woocommerce_ship_to_different_address_checked', 'filter_woocommerce_ship_to_different_address_checked', 10, 1 );
 
 
 
