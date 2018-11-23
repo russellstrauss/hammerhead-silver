@@ -1,8 +1,110 @@
+$tabletMenuFontSize: 14px;
+
 .main-navigation {
 	
-	@include tablet {
+	@include tablet-only {
+		margin-left: 120px;
+		margin-right: 120px;
+		width: auto;
+	}
+	
+	@include desktop {
 		margin-left: 200px;
 		margin-right: 200px;
 		width: auto;
+	}
+	
+	.menu-menu-container {
+		
+		ul {	
+			list-style: none;
+			margin:auto;
+			padding:0;
+			width: 100%;
+			
+			li {
+				position: relative;
+				margin: 8px;
+				
+				@include tablet-only {
+					margin: 0;
+				}
+				
+				a {
+					padding: 6px 8px 6px 8px;
+					color: #000;
+					text-decoration: none;
+					border: 1px solid transparent;
+					border-radius: 3px;
+					display: inline-block;
+					background: rgba(255,255,255,0.3);
+					text-align: left;
+					font-size: 22px;
+					
+					@include tablet-only {
+						font-size: $tabletMenuFontSize;
+					}
+				}
+			}
+		}
+	}
+}
+
+.hammerhead-checkout {
+	
+	@include mobile-only {
+		border-radius: 6px;
+		border: 1px solid black;
+		margin: 20px 0;
+	}
+	
+	@include tablet {
+		position: absolute;
+		right: 20px;
+		top: 14px;
+		width: 120px;
+		z-index: 999;
+		
+		&:hover {
+			opacity: .75;
+		}
+	}
+	
+	@include desktop {
+		width: 200px;
+		top: 25px;
+	}
+	
+	a {
+		display: block;
+		text-decoration: none;
+		
+		@include mobile-only {
+			padding: 20px;
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			
+			@include mobile-only {
+				width: 160px;
+			}
+		}
+		
+		span {
+			@include Montserrat;
+			color: black;
+			font-size: 22px;
+			text-transform: uppercase;
+			
+			@include mobile-only {
+				display: block;
+			}
+			
+			@include tablet-only {
+				font-size: $tabletMenuFontSize;
+			}
+		}
 	}
 }

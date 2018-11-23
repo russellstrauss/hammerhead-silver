@@ -572,18 +572,6 @@ a:active {
 	}
 }
 
-.main-navigation ul {	
-	list-style: none;
-	margin:auto;
-	padding:0;
-	width: 100%;
-}
-
-.main-navigation li {
-	position: relative;
-	margin: 8px;
-	font-size: 22pz;
-}
 @media screen and (min-width: 768px){
 	.main-navigation li {
 		float: none;
@@ -591,18 +579,6 @@ a:active {
 		display: inline-block;
 		font-size: 1rem;
 	}
-}
-
-.main-navigation a {
-	padding:6px 8px 6px 8px;
-	color:#000;
-	text-decoration:none;
-	border:1px solid transparent;
-	border-radius:3px;
-	display: inline-block;
-	background:rgba(255,255,255,0.3);
-	text-align:left;
-	font-size: 22px;
 }
 
 .main-navigation  a:focus,
