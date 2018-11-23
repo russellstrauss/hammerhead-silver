@@ -6,28 +6,36 @@ module.exports = function () {
   return {
     settings: {},
     init: function init() {
-      settings = this.settings;
-      this.bindUI();
+      this.removeViewCartButtons();
     },
-    bindUI: function bindUI() {}
+    // Remove view cart buttons in woocommerce alerts so user has to use custom checkout button
+    removeViewCartButtons: function removeViewCartButtons() {
+      var viewCartButtons = document.querySelectorAll('.wc-forward');
+
+      for (var i = 0; i < viewCartButtons.length; i++) {
+        if (viewCartButtons[i].textContent.toLowerCase() === "View Cart".toLowerCase()) {
+          viewCartButtons[i].style.display = 'none';
+          viewCartButtons[i].remove();
+        }
+      }
+    }
   };
 };
 
 },{}],2:[function(require,module,exports){
 "use strict";
 
-var Component = require('./components/component.js');
+var Shop = require('./components/shop.js')();
 
 var Utilities = require('./utils.js');
 
 (function () {
-  $(document).ready(function () {
-    Component().init();
-    $(window).trigger('resize');
+  document.addEventListener("DOMContentLoaded", function () {
+    Shop.init();
   });
 })();
 
-},{"./components/component.js":1,"./utils.js":3}],3:[function(require,module,exports){
+},{"./components/shop.js":1,"./utils.js":3}],3:[function(require,module,exports){
 "use strict";
 
 (function () {

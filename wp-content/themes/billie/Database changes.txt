@@ -17,9 +17,5 @@ Database changes
 Todo
 
 -Allow categories to be filtered separately between artists
--Don't route user straight to cart so they click on the bling shark
 -Style desktop and mobile menu better
 -Style category selection menu better
--Change lightbox loader (hammerhead sharks twirling?)
--Move policy section to above cart (Cart is in a different loop or something?)
--Show bling shark on product detail page

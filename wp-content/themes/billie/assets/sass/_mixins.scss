@@ -66,6 +66,7 @@ $desktop-large-width: 1200px;
 }
 
 @mixin alert {
+	text-align: left;
 	background-color: #f7f6f7;
 	border-top-color: black;
 	border: 1px solid black;

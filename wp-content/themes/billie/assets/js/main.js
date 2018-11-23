@@ -1,14 +1,11 @@
-var Component = require('./components/component.js');
+var Shop = require('./components/shop.js')();
 var Utilities = require('./utils.js');
 
 (function () {
 	
-	$(document).ready(function() {
-				
-		Component().init();
+	document.addEventListener("DOMContentLoaded",function(){
 		
-		$(window).trigger('resize');
-	
+		Shop.init()
 	});
 	
 })();
