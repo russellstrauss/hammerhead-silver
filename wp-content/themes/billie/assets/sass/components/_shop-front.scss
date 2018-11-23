@@ -34,14 +34,6 @@
 			}
 		}
 		
-		&:first-child {
-			margin-right: $columnPadding;
-			
-			@include mobile-only {
-				margin-right: $mobileColumnPadding;
-			}
-		}
-		
 		.overlay {
 			content: '';
 			opacity: 0;
@@ -124,13 +116,17 @@
 	
 	.profile-pics {
 		display: flex;
-		margin-bottom: $columnPadding;
+		margin-top: $columnPadding;
 		
 		@include mobile-only {
 			margin-bottom: $mobileColumnPadding;
 		}
 		
 		a {
+			
+			&:first-child {
+				margin-right: $mobileColumnPadding * 2;
+			}
 			
 			@include mobile-only {
 				width: 100%;
