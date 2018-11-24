@@ -50,7 +50,7 @@ $desktop-large-width: 1200px;
 	text-align: center;
 	
 	@include mobile-only {
-		font-size: 22px;
+		font-size: 16px;
 	}
 	
 	&:hover {
@@ -75,5 +75,14 @@ $desktop-large-width: 1200px;
 	
 	&:before {
 		color: black;
+	}
+	
+	.button {
+		
+		@include mobile-only {
+			display: block;
+			margin-top: 20px;
+			width: 100%;
+		}
 	}
 }

@@ -555,21 +555,16 @@ a:active {
 -------------------------------------------------------------- */
 
 .main-navigation {
+	@include Montserrat;
 	display: inline-block;
 	padding:9px;
 	font-size:14px;
 	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;
 	text-transform:uppercase;
 	letter-spacing: 2px; 
 	z-index:99; 
 	width:100%;
 	height:auto;
-}
-
-@media screen and (max-width: 767px) {
-	.main-navigation li {
-	}
 }
 
 @media screen and (min-width: 768px){
@@ -878,11 +873,11 @@ li a:before{
 
 .widget-title,
 .widgettitle {
+	@include Montserrat;
 	margin:0;
 	padding-bottom:7px;
 	font-size:16px;
 	font-size:1.6rem;
-	font-family: "Montserrat",sans-serif;
     text-transform: uppercase;
 }
 
@@ -1051,23 +1046,23 @@ table#wp-calendar,
 }
 
 .site-description {
+	@include Montserrat;
 	font-size: 28px;
 	font-size: 2.8rem;
-	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	margin-top: 15px;
 	margin-bottom: 30px;
 }
 
-.site-title{
-	position:relative;
-	margin:0 auto 10px auto;
+.site-title {
+	@include Montserrat;
+	position: relative;
+	margin: 0 auto 10px auto;
 	font-size: 5rem; 
-	line-height:1; 
-	text-decoration:none;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
-	color:#000000;
+	line-height: 1; 
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000000;
 }
 
 .site-content{
@@ -1082,18 +1077,17 @@ table#wp-calendar,
 /*Hide the site content if the landing page template is used.*/
 .page-template-landingpage .site-content{ display:none;}
 .site-footer{
-	background:#fff;
-	padding:12px 0 12px 0;
+	padding: 12px 0 12px 0;
 }
 
 .site-info{
-	width:90%; 
-	margin:35px auto 15px auto; 
-	font-size:12px;
-	font-size:1.2rem;
-	text-align: center; 
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
+	@include Montserrat;
+	width: 90%; 
+	margin: 35px auto 15px auto; 
+	font-size: 12px;
+	font-size: 1.2rem;
+	text-align: center;	
+	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
@@ -1218,39 +1212,39 @@ table#wp-calendar,
 }
 
 .page-links {
+	@include Montserrat;
 	clear: both;
 	margin: 0 0 1.5em;
-	padding:12px;
-	position:relative;
-	background:#fff;
-	font-size:14px;
-	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
+	padding: 12px;
+	position: relative;
+	background: #fff;
+	font-size: 14px;
+	font-size: 1.4rem;
 	text-transform:uppercase;
 	letter-spacing: 2px; 
-	border:1px solid #f2f2f2;
-	border-radius:4px;
-	display:inline-block;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+	display: inline-block;
 }
 
 .entry-title, 
-.entry-title a{
-	font-size:30px;
-	font-size:3.0rem; 
-	text-decoration:none;
-	margin:10px 0 15px 0;
-	padding-bottom:4px;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
+.entry-title a {
+	@include Montserrat;
+	font-size: 30px;
+	font-size: 3.0rem; 
+	text-decoration: none;
+	margin: 10px 0 15px 0;
+	padding-bottom: 4px;
+	text-transform: uppercase;
 	letter-spacing: 2px;
-	color:#000000;
+	color: #000000;
 }
 
 .entry-title a:hover{text-decoration: underline;}
 
-.page-title{
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
+.page-title {
+	@include Montserrat;
+	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
@@ -1347,13 +1341,13 @@ table#wp-calendar,
 }
 
 .comments-title,
-.comment-reply-title{
+.comment-reply-title {
+	@include Montserrat;
 	font-size: 20px;
 	font-size: 2.0rem;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
+	text-transform: uppercase;
 	letter-spacing: 2px;
-	padding:10px 0 10px 0;
+	padding: 10px 0 10px 0;
 }
 
 .comment-list{margin: 0 0 1.5em 0}
@@ -1509,14 +1503,14 @@ table#wp-calendar,
     z-index:9999;
 }
 
-.featured-post h2 a{
-    color:#000;
+.featured-post h2 a {
+	@include Montserrat;
+    color: #000;
     text-transform: uppercase;
-    font-size:2rem;
+    font-size: 2rem;
     text-decoration: none;
-   	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
-	color:#000000;
+	text-transform: uppercase;
+	color: #000000;
 }
 
 .featured-post h2 a:hover,
@@ -1534,18 +1528,18 @@ table#wp-calendar,
 }
 
 .featured-text {
-    display:block;
-    width:100%;
-    margin:25% 0 0 0;
-    padding:0;
-    background:#fff;
-    border:none;
-    border:1px solid #fafafa;
-    color:#666;
+	@include Montserrat;
+    display: block;
+    width: 100%;
+    margin: 25% 0 0 0;
+    padding: 0;
+    background: #fff;
+    border: none;
+    border: 1px solid #fafafa;
+    color: #666;
     text-transform: uppercase;
-    font-size:1.3rem;
-    font-family: "Montserrat", sans-serif;
-    opacity:0.86;
+    font-size: 1.3rem;
+    opacity: 0.86;
 }
 
 /* Jetpack Sharing */
@@ -1603,17 +1597,17 @@ table#wp-calendar,
 }
 
 .testimonial-entry-title,
-.jetpack-testimonial .entry-title{
-	background:none;
-	text-align:center;
-	font-size:14px;
-	margin-top:15px;
-	text-decoration:none;
-	padding-bottom:4px;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
+.jetpack-testimonial .entry-title {
+	@include Montserrat;
+	background: none;
+	text-align: center;
+	font-size: 14px;
+	margin-top: 15px;
+	text-decoration: none;
+	padding-bottom: 4px;	
+	text-transform: uppercase;
 	letter-spacing: 2px; 
-	display:block;
+	display: block;
 }
 
 .testimonial-entry-title a:focus,

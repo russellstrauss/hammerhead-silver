@@ -22,11 +22,15 @@
 				}
 			}
 			
-			.cart {
+			table.cart {
 				
 				.cart_item {
 					
 					.product-remove {
+						
+						@include mobile-only {
+							padding: 20px;
+						}
 						
 						.remove {
 							margin: auto;
@@ -34,9 +38,17 @@
 							color: transparent !important;
 							border-radius: 0;
 							background-image: url(assets/img/close-red.svg);
-							background-size: 100%;
+							background-size: contain;
+							background-repeat: no-repeat;
 							background-position: center center;
 							opacity: .5;
+							
+							@include mobile-only {
+								width: 100%;
+								height: 40px;
+								background-image: url(assets/img/trash-can.svg);
+								opacity: 1;
+							}
 							
 							&:hover {
 								background-color: transparent;
@@ -47,11 +59,39 @@
 					
 					.product-thumbnail {
 						
+						@include mobile-only {
+							display: block;
+							
+							&:before {
+								display: none;
+							}
+						}
+						
 						img {
 							width: 300px;
 							display: block;
 							margin: 20px auto;
 						}
+					}
+					
+					.product-name {
+						
+						@include mobile-only {
+							text-align: left !important;
+							
+							&:before {
+								display: block;
+								margin-bottom: 5px;
+								float: none;
+								
+							}
+							
+							a {
+								display: block;
+								width: 100%;
+							}
+						}
+						
 					}
 					
 					.quantity {
@@ -63,14 +103,21 @@
 					}
 				}
 				
-				.actions {
+				td.actions {
 					padding: 20px;
 					
 					.button {
 						@include black-button;
 						
 						&[type="submit"] {
-							float: right;
+							
+							@include mobile-only {
+								width: 100% !important;
+							}
+							
+							@include tablet {
+								float: right;
+							}
 						}
 					}
 				}
@@ -166,6 +213,14 @@
 					@include desktop {
 						width: 48%;
 					}
+					
+					.form-row-first, .form-row-last {
+						@include mobile-only {
+							display: block;
+							width: 100%;
+							float: none;
+						}
+					}
 				}
 				
 				.woocommerce-info, .woocommerce-message, .woocommerce-error {
@@ -216,6 +271,13 @@
 					vertical-align: middle;
 					cursor: pointer;
 				}
+				
+				.woocommerce-checkout-review-order-table {
+							
+					@include mobile-only {
+						font-size: 12px;
+					}
+				}
 			}
 		}
 	}
@@ -239,6 +301,14 @@
 				
 				&:before {
 					content: none;
+				}
+			}
+			
+			.about_paypal {
+				
+				@include mobile-only {
+					float: none;
+					display: block;
 				}
 			}
 		}

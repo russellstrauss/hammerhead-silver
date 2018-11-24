@@ -15,7 +15,6 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/bundle.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -77,16 +76,21 @@
 		</div><!-- .site-branding -->
 			
 		<?php
-		if (WC()->cart->get_cart_contents_count() > 0) {
+		if (WC()->cart->get_cart_contents_count() > 0 && !is_cart()) {
+			
+		//echo '<h1>' . is_cart() . '</h1>';
 
 		echo '<div class="hammerhead-checkout">';
 			echo '<a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
 				echo '<span>checkout ' . sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ) . '</span>';
-				echo '<img src="' . get_template_directory_uri() . '/assets/img/bling-shark.svg" alt="cart-checkout" />';
+				echo '<div class="bling-shark-container">';
+					echo '<div class="bling-shark"></div>';
+					echo '<div class="bling-shark-hover"></div>';
+				echo '</div>';
 			echo '</a>';
 		echo '</div>';
 		} ?>
 	</header><!-- #masthead -->
 	
 		
-	<div id="content" class="site-content">
+	<div class="site-content">
