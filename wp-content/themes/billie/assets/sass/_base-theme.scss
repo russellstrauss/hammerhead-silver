@@ -641,7 +641,7 @@ content:'';
 		outline: none;
 	}
 	
-	.main-navigation{ position: relative !important;}
+	.main-navigation{ position: relative;}
 
 	.main-navigation ul {
 		display: none;
@@ -989,7 +989,6 @@ table#wp-calendar,
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
-	z-index: 400;
 	margin-top: 20px;
 }
 
@@ -2078,9 +2077,9 @@ span.bbp-admin-links a,
 	.single-jetpack-testimonial .content-area,
 	.page .content-area,
 	.single-jetpack-portfolio .content-area, 
-	.no-sidebar .content-area{
-		width:95%;
-		margin:0 auto;
-		float:none;
+	.no-sidebar .content-area {
+		width: 100%;
+		margin: 0 auto;
+		float: none;
 	}
 }

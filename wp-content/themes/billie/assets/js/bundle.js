@@ -6,6 +6,41 @@ module.exports = function () {
   return {
     settings: {},
     init: function init() {
+      this.animateInMobileMenu();
+    },
+    animateInMobileMenu: function animateInMobileMenu() {
+      var mainNavigation = document.querySelector('.main-navigation');
+      var menu = mainNavigation.querySelector('.menu-toggle');
+      menu.addEventListener('click', function (element) {
+        var menuItems = document.querySelectorAll('.main-navigation .nav-menu li');
+        console.log(element);
+
+        var _loop = function _loop(i) {
+          if (mainNavigation.classList.contains('toggled')) {
+            setTimeout(function () {
+              menuItems[i].style.opacity = "1";
+            }, i * 50 + 400);
+          } else {
+            menuItems[i].style.opacity = "0";
+          }
+        };
+
+        for (var i = 0; i < menuItems.length; i++) {
+          _loop(i);
+        }
+      });
+    }
+  };
+};
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+module.exports = function () {
+  var settings;
+  return {
+    settings: {},
+    init: function init() {
       this.removeViewCartButtons();
     },
     // Remove view cart buttons in woocommerce alerts so user has to use custom checkout button
@@ -22,20 +57,23 @@ module.exports = function () {
   };
 };
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
-var Shop = require('./components/shop.js')();
+var Header = require('./components/header.js');
+
+var Shop = require('./components/shop.js');
 
 var Utilities = require('./utils.js');
 
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
-    Shop.init();
+    Shop().init();
+    Header().init();
   });
 })();
 
-},{"./components/shop.js":1,"./utils.js":3}],3:[function(require,module,exports){
+},{"./components/header.js":1,"./components/shop.js":2,"./utils.js":4}],4:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -134,4 +172,4 @@ var Utilities = require('./utils.js');
   module.exports = window.utils;
 })();
 
-},{}]},{},[2]);
+},{}]},{},[3]);

@@ -44,7 +44,7 @@
 			left: 0;
 			background-color: rgba(0, 0, 0, .4);
 			transition: opacity 350ms ease;
-			z-index: 1;
+			z-index: 0;
 			
 			@include mobile-only {
 				opacity: 1;
@@ -119,26 +119,30 @@
 		margin-top: $columnPadding;
 		
 		@include mobile-only {
-			margin-bottom: $mobileColumnPadding;
+			margin-top: $mobileColumnPadding;
 		}
 		
 		a {
-			
-			&:first-child {
-				margin-right: $mobileColumnPadding * 2;
-			}
 			
 			@include mobile-only {
 				width: 100%;
 				height: 300px;
 				$padding: $mobileColumnPadding/2; 
-				width: calc(50% - $padding);
+				width: calc(50% - #{$padding});
+				
+				&:first-child {
+					margin-right: $mobileColumnPadding;
+				}	
 			}
 			
 			@include tablet {
 				height: 600px;
 				$padding: $columnPadding/2;
 				width: calc(50% - #{$padding});
+				
+				&:first-child {
+					margin-right: $columnPadding;
+				}
 			}
 		}
 	}
