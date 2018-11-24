@@ -27,9 +27,15 @@
 	<?php if ( has_nav_menu( 'header' )  ) {
 	?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Main Menu', 'billie' ); ?></span></button>
+			<!-- <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php //_e( 'Main Menu', 'billie' ); ?></span></button> -->
 			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth'=>2 ) );  ?>
-		</nav><!-- #site-navigation -->
+		
+			<button class="menu-toggle hamburger hamburger--squeeze" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</nav>
 	<?php
 	}
 	?>

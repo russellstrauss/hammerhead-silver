@@ -44,7 +44,7 @@
 			left: 0;
 			background-color: rgba(0, 0, 0, .4);
 			transition: opacity 350ms ease;
-			z-index: 0;
+			z-index: $z-index-shop-front-overlay-background;
 			
 			@include mobile-only {
 				opacity: 1;
@@ -62,7 +62,7 @@
 			.text {
 				@include font-style;
 				position: relative;
-				z-index: 999;
+				z-index: $z-index-shop-front-overlay-text;
 				transition: color 350ms ease;
 				width: 100%;
 				position: absolute;

@@ -97,8 +97,15 @@
 					.quantity {
 						
 						.qty {
-							display: block;
-							margin: auto;
+							
+							@include mobile-only {
+								border: 1px solid #ccc;
+							}
+							
+							@include tablet {
+								display: block;
+								margin: auto;
+							}
 						}
 					}
 				}

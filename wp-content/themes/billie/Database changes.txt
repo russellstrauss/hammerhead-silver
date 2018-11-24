@@ -1,21 +1,10 @@
 Database changes
 
--Add rings category; add other categories
--Add Product categories to above shop widget
--Convert all artist categories to tags
--Activate Advance Custom Fields
--Add custom fields
-	-all_jewelry_background_image
-	-dustins_jewelry_background_image
-	-hillarys_jewelry_background_image
--Remove cart from woocommerce sidebar
--Remove cart menu item from main menu
--Deactivate plugins
--Add regenerate thumbnails plugin
+-Reset site logo
+-reset url
 **-Change back require SSL on checkout page, woocommerse settings
 
 Todo
 
--Allow categories to be filtered separately between artists
 -Style desktop and mobile menu better
 -Style category selection menu better

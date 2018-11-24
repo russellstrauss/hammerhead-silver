@@ -13,13 +13,13 @@ module.exports = function () {
       var menu = mainNavigation.querySelector('.menu-toggle');
       menu.addEventListener('click', function (element) {
         var menuItems = document.querySelectorAll('.main-navigation .nav-menu li');
-        console.log(element);
+        var htmlDoc = document.querySelector('html');
 
         var _loop = function _loop(i) {
           if (mainNavigation.classList.contains('toggled')) {
             setTimeout(function () {
               menuItems[i].style.opacity = "1";
-            }, i * 50 + 400);
+            }, i * 70 + 400);
           } else {
             menuItems[i].style.opacity = "0";
           }
@@ -27,6 +27,14 @@ module.exports = function () {
 
         for (var i = 0; i < menuItems.length; i++) {
           _loop(i);
+        }
+
+        if (mainNavigation.classList.contains('toggled')) {
+          htmlDoc.style.overflowY = "hidden";
+          menu.classList.add('is-active');
+        } else {
+          htmlDoc.style.overflowY = "";
+          menu.classList.remove('is-active');
         }
       });
     }

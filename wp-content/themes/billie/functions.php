@@ -32,11 +32,6 @@ function custom_add_to_cart_message() {
 	return $message;
 }
 
-
-
-
-
-
 /**
  * billie functions and definitions ================================== All Billie theme related methods below, default with the theme.
  *

@@ -35,6 +35,10 @@ div.pp_woocommerce {
 				background-repeat: no-repeat;
 				opacity: .5;
 				
+				@include mobile-only {
+					background-size: 25px;
+				}
+				
 				&:hover {
 					opacity: 1;
 				}
@@ -46,11 +50,61 @@ div.pp_woocommerce {
 				&.pp_previous {
 					background-image: url(assets/img/caret-left.svg);
 					background-position: left 20px center;
+					
+					@include mobile-only {
+						background-position: left 10px center;
+					}
 				}
 				
 				&.pp_next {
 					background-image: url(assets/img/caret-right.svg);
 					background-position: right 20px center;
+					
+					@include mobile-only {
+						background-position: right 10px center;
+					}
+				}
+			}
+			
+			.pp_hoverContainer {
+				@include mobile-only {
+					width: 100% !important;
+					height: 100% !important;
+					
+					.pp_next {
+						display: block !important;
+					}
+					
+					.pp_previous {
+						display: block !important;
+					}
+				}
+			}
+			
+			$loader-icon-size: 50px;
+			.pp_loaderIcon {
+				display: block;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				height: $loader-icon-size;
+				width: $loader-icon-size;
+				transform: translate(-100%, -100%);
+				background-size: 100%;
+				margin: 0;
+				
+				&:before {
+					height: $loader-icon-size;
+					width: $loader-icon-size;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					display: block;
+					content: "";
+					//animation: spin 1.5s ease-in-out infinite;
+					background: url(assets/img/hammerhead-loader.svg) center center;
+					background-size: cover;
+					margin: 0;
 				}
 			}
 		}
@@ -83,6 +137,13 @@ div.pp_woocommerce {
 						background-image: url(assets/img/right-arrow.svg);
 					}
 				}
+				
+				.currentTextHolder {
+					
+					@include mobile-only {
+						line-height: normal;
+					}
+				}
 			}
 			
 			.pp_close {
@@ -94,8 +155,12 @@ div.pp_woocommerce {
 				border-radius: 0;
 				right: 40px;
 				top: 20px;
-				z-index: 9999;
+				z-index: $z-index-woocommerce-lightbox-close;
 				opacity: .5;
+				
+				@include mobile-only {
+					right: 20px;
+				}
 				
 				&:hover {
 					opacity: 1;

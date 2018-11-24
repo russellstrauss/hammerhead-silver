@@ -31,8 +31,20 @@ header {
 		button {
 			
 			@include mobile-only {
-				z-index: 2000;
+				z-index: $z-index-mobile-hamburger;
 				position: absolute;
+				opacity: 1 !important;
+			}
+			
+			&.menu-toggle {
+				
+				&:before {
+					content: none;
+				}
+				
+				.hamburger-inner::before {
+					border-radius: 2px;
+				}
 			}
 		}
 		
@@ -41,6 +53,7 @@ header {
 			
 			@include mobile-only {
 				position: fixed;
+				z-index: $z-index-mobile-menu;
 				top: 0;
 				left: 0;
 				width: 100vw;
@@ -57,10 +70,17 @@ header {
 					transform: translateY(-50%);
 					
 					li {
-						margin: 70px 10px;
+						margin: 0;
 						opacity: 0;
 						transition-delay: $menuOpenSpeed;
 						transition: opacity 250ms ease;
+						
+						a {
+							display: block;
+							width: 100%;
+							padding: 40px 15px;
+							text-align: center;
+						}
 					}
 				}
 			}
@@ -86,7 +106,6 @@ header {
 						border: 1px solid transparent;
 						border-radius: 3px;
 						display: inline-block;
-						background: rgba(255,255,255,0.3);
 						text-align: left;
 						font-size: 22px;
 						
@@ -121,7 +140,7 @@ header {
 			right: 20px;
 			top: 14px;
 			width: 120px;
-			z-index: 999;
+			z-index: $z-index-hammerhead-checkout;
 		}
 		
 		@include desktop {
