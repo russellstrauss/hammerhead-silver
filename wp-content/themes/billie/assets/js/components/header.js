@@ -18,8 +18,8 @@ module.exports = function() {
 			let mainNavigation = document.querySelector('.main-navigation');
 			let menu = mainNavigation.querySelector('.menu-toggle');
 			
-			menu.addEventListener('click', function(element) {
-				
+			menu.addEventListener('click', function() {
+								
 				let menuItems = document.querySelectorAll('.main-navigation .nav-menu li');
 				let htmlDoc = document.querySelector('html');
 

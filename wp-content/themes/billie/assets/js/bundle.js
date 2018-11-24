@@ -11,7 +11,7 @@ module.exports = function () {
     animateInMobileMenu: function animateInMobileMenu() {
       var mainNavigation = document.querySelector('.main-navigation');
       var menu = mainNavigation.querySelector('.menu-toggle');
-      menu.addEventListener('click', function (element) {
+      menu.addEventListener('click', function () {
         var menuItems = document.querySelectorAll('.main-navigation .nav-menu li');
         var htmlDoc = document.querySelector('html');
 
