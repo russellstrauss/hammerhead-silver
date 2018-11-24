@@ -37,6 +37,7 @@ $desktop-large-width: 1200px;
 
 @mixin Montserrat {
 	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 }
 
 @mixin black-button {
