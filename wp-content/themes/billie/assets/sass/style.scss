@@ -2,7 +2,7 @@
 // This project uses inverted triangle CSS architecture (https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 
 // vendors
-@import 'components/hamburger.scss';
+@import '../vendors/css/swiper';
 
 // shared
 @import 'mixins';
@@ -17,6 +17,7 @@
 
 @import 'components/about';
 @import 'components/header';
+@import 'components/hamburger';
 @import 'components/footer';
 @import 'components/shop-products';
 @import 'components/shop-front';

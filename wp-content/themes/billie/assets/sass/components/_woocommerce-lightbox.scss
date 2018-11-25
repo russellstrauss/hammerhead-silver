@@ -40,7 +40,10 @@ div.pp_woocommerce {
 				}
 				
 				&:hover {
-					opacity: 1;
+					
+					@include tablet {
+						opacity: 1;
+					}
 				}
 				
 				&:before {
@@ -159,13 +162,20 @@ div.pp_woocommerce {
 				opacity: .5;
 				
 				@include mobile-only {
-					right: 20px;
-					width: 32px;
-					height: 32px;
+					right: -15px;
+					top: -15px;
+					width: 75px;
+					height: 75px;
+					background-size: 16px;
+					background-repeat: no-repeat;
+					background-position: center center;
 				}
 				
 				&:hover {
-					opacity: 1;
+					
+					@include tablet {
+						opacity: 1;
+					}
 				}
 				
 				&:before {

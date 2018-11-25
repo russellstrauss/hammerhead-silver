@@ -42,7 +42,9 @@
 	<div class="site-branding">	
 		<?php //billie_the_site_logo(); ?>
 		
-		<img id="site-logo" src="<?php header_image(); ?>" alt="logo" />
+		<a href="<?php echo get_site_url(); ?>">
+			<img id="site-logo" src="<?php header_image(); ?>" alt="logo" />
+		</a>
 		
 		<?php if (display_header_text() ) {	?>
 			<?php if (get_bloginfo('description') <> '') {	?>
@@ -74,7 +76,7 @@
 					}
 					?>
 			<?php
-		}
+			}
 			if ( !get_theme_mod('billie_hide_search') ){
 				get_search_form();
 			}

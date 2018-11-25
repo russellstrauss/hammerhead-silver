@@ -34,9 +34,14 @@ header {
 				z-index: $z-index-mobile-hamburger;
 				position: absolute;
 				opacity: 1 !important;
+				left: 2px;
 			}
 			
 			&.menu-toggle {
+				
+				@include tablet {
+					display: none;
+				}
 				
 				&:before {
 					content: none;
@@ -128,13 +133,6 @@ header {
 	.hammerhead-checkout {
 		text-align: center;
 		
-		@include mobile-only {
-			border-radius: 6px;
-			border: 1px solid black;
-			margin: 15px;
-			//box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-		}
-		
 		@include tablet {
 			position: absolute;
 			right: 20px;
@@ -171,6 +169,24 @@ header {
 			
 			@include mobile-only {
 				padding: 20px;
+				border-radius: 6px;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				margin: 15px;
+				
+				border: 1px solid #ccc;
+				background-color: #eee;
+				box-shadow: 0 6px #aaa;
+				
+				// border: 1px solid #9FC2D6;
+				// background-color: #B8D0DE;
+				// box-shadow: 0 6px #6792AB;
+				
+				&:active {
+					position: relative;
+					box-shadow: none;
+					top: 6px;
+				}
 			}
 			
 			.bling-shark-container {

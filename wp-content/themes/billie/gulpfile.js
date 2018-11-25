@@ -32,7 +32,7 @@ gulp.task('sync', ['sass'], function() {
 
 var vendors = {
 	merge: [
-		//'path-to-file.js'
+		'./assets/vendors/js/swiper.min.js'
 	]
 };
 
