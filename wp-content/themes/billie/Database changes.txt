@@ -11,3 +11,5 @@ Todo
 -Polish category selection menu, add swiping UI on mobile
 -Polish hammerhead loader, use circle to make more ciruclar
 -Make X on mobile lightbox bigger
+-Style coupon code alert
+-Make shop front the homepage?

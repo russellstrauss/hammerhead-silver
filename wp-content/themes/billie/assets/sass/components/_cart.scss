@@ -337,6 +337,32 @@
 
 .woocommerce  {
 	
+	.woocommerce-info, .woocommerce-error, .woocommerce-message {
+		@include alert;
+	}
+	
+	.checkout_coupon {
+		
+		.form-row {
+			margin: 0;
+			
+			input {
+				@include form-input-style;
+			}
+		}
+		
+		input[type="submit"] {
+			@include black-button;
+			display: block;
+			width: 100%;
+			
+			@include mobile-only {
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		}
+	}
+	
 	form {
 		
 		.form-row {

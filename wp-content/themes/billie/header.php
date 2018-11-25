@@ -83,19 +83,17 @@
 		</div><!-- .site-branding -->
 			
 		<?php
-		if (WC()->cart->get_cart_contents_count() > 0 && !is_cart()) {
+		if (WC()->cart->get_cart_contents_count() > 0 && !is_cart() && !is_checkout()) {
 			
-		//echo '<h1>' . is_cart() . '</h1>';
-
-		echo '<div class="hammerhead-checkout">';
-			echo '<a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
-				echo '<span>checkout ' . sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ) . '</span>';
-				echo '<div class="bling-shark-container">';
-					echo '<div class="bling-shark"></div>';
-					echo '<div class="bling-shark-hover"></div>';
-				echo '</div>';
-			echo '</a>';
-		echo '</div>';
+			echo '<div class="hammerhead-checkout">';
+				echo '<a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
+					echo '<span>checkout ' . sprintf ( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ) . '</span>';
+					echo '<div class="bling-shark-container">';
+						echo '<div class="bling-shark"></div>';
+						echo '<div class="bling-shark-hover"></div>';
+					echo '</div>';
+				echo '</a>';
+			echo '</div>';
 		} ?>
 	</header><!-- #masthead -->
 	
