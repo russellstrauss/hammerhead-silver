@@ -20,9 +20,9 @@
 				}
 				
 				a {
+					text-decoration: none;
 					
 					@include mobile-only {
-						text-decoration: none;
 						padding: 10px 12px;
 						display: block;
 						top: 50%;

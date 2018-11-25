@@ -10,3 +10,4 @@ Todo
 -Polish animate menu items fade in
 -Polish category selection menu, add swiping UI on mobile
 -Polish hammerhead loader, use circle to make more ciruclar
+-Make X on mobile lightbox bigger
