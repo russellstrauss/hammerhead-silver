@@ -24,9 +24,7 @@ gulp.task('sass', function () {
 gulp.task('sync', ['sass'], function() {
 	browserSync.init({
 		open: true,
-		server: {
-			baseDir: "./",
-		}
+		proxy: "http://hammerheadsilver.local"
 	});
 });
 
@@ -39,7 +37,6 @@ var vendors = {
 gulp.task('vendors', function() {
 	return gulp.src(vendors.merge)
 		.pipe(concat('vendors.js'))
-		//.pipe(uglify())
 		.pipe(gulp.dest('./assets/vendors/js/'));
 });
 

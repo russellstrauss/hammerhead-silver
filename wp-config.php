@@ -18,8 +18,7 @@
  * @package WordPress
  */
 
-// define( 'WP_HOME', 'http://hammerheadsilver.local' );
-// define( 'WP_SITEURL', 'http://hammerheadsilver.local' );
+//define('RELOCATE', true);
 
 define('DB_NAME', 'hammerhe_wrdp1');
 define('DB_USER', 'hammerhe_wrdp1');
