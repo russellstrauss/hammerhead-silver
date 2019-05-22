@@ -6,28 +6,82 @@ module.exports = function () {
   return {
     settings: {},
     init: function init() {
-      settings = this.settings;
-      this.bindUI();
+      this.animateInMobileMenu();
     },
-    bindUI: function bindUI() {}
+    animateInMobileMenu: function animateInMobileMenu() {
+      var mainNavigation = document.querySelector('.main-navigation');
+      var menu = mainNavigation.querySelector('.menu-toggle');
+      menu.addEventListener('click', function () {
+        var menuItems = document.querySelectorAll('.main-navigation .nav-menu li');
+        var htmlDoc = document.querySelector('html');
+
+        var _loop = function _loop(i) {
+          if (mainNavigation.classList.contains('toggled')) {
+            setTimeout(function () {
+              menuItems[i].style.opacity = "1";
+            }, i * 70 + 400);
+          } else {
+            menuItems[i].style.opacity = "0";
+          }
+        };
+
+        for (var i = 0; i < menuItems.length; i++) {
+          _loop(i);
+        }
+
+        if (mainNavigation.classList.contains('toggled')) {
+          htmlDoc.style.overflowY = "hidden";
+          menu.classList.add('is-active');
+        } else {
+          htmlDoc.style.overflowY = "";
+          menu.classList.remove('is-active');
+        }
+      });
+    }
   };
 };
 
 },{}],2:[function(require,module,exports){
 "use strict";
 
-var Component = require('./components/component.js');
+module.exports = function () {
+  var settings;
+  return {
+    settings: {},
+    init: function init() {
+      this.removeViewCartButtons();
+    },
+    // Remove view cart buttons in woocommerce alerts so user has to use custom checkout button
+    removeViewCartButtons: function removeViewCartButtons() {
+      var viewCartButtons = document.querySelectorAll('.wc-forward');
+
+      for (var i = 0; i < viewCartButtons.length; i++) {
+        if (viewCartButtons[i].textContent.toLowerCase() === "View Cart".toLowerCase()) {
+          viewCartButtons[i].style.display = 'none';
+          viewCartButtons[i].remove();
+        }
+      }
+    }
+  };
+};
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+var Header = require('./components/header.js');
+
+var Shop = require('./components/shop.js');
 
 var Utilities = require('./utils.js');
 
 (function () {
-  $(document).ready(function () {
-    Component().init();
-    $(window).trigger('resize');
+  document.addEventListener("DOMContentLoaded", function () {
+    Shop().init();
+    Header().init();
   });
 })();
 
-},{"./components/component.js":1,"./utils.js":3}],3:[function(require,module,exports){
+},{"./components/header.js":1,"./components/shop.js":2,"./utils.js":4}],4:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -126,4 +180,4 @@ var Utilities = require('./utils.js');
   module.exports = window.utils;
 })();
 
-},{}]},{},[2]);
+},{}]},{},[3]);

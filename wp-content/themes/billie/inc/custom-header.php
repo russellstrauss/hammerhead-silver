@@ -33,5 +33,5 @@ function billie_custom_header_setup() {
 	) );
 }
 
-//add_action( 'after_setup_theme', 'billie_custom_header_setup' );
+add_action( 'after_setup_theme', 'billie_custom_header_setup' );
 

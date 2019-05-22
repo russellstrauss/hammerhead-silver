@@ -1,6 +1,39 @@
 <?php
+
+// Disable plugin notifications
+remove_action('load-update-core.php','wp_update_plugins');
+add_filter('pre_site_transient_update_plugins','__return_null');
+
+// Add Above shop widget to woocommerce template, third parameter is "priority"
+add_action( 'woocommerce_before_shop_loop', 'add_product_categories');
+function add_product_categories() {
+	echo'<div class="above-shop-section">';
+	dynamic_sidebar( 'above-shop-section' );
+	echo '</div>';
+}
+
+// Add policies widget below cart
+add_action('woocommerce_after_cart_table', 'add_policies_widget');
+function add_policies_widget() {
+
+	echo '<div class="policies">';
+	dynamic_sidebar('return-policies-section');
+	echo '</div>';
+}
+
+// Remove View cart button after adding to cart so that the user has to click on our custom checkout button
+add_filter( 'wc_add_to_cart_message', 'custom_add_to_cart_message' );
+function custom_add_to_cart_message() {
+	global $woocommerce;
+
+	$return_to  = get_permalink(woocommerce_get_page_id('shop'));
+	$message    = sprintf('%s <a href="%1s" class="button wc-forwards">%2s</a>', __('Product successfully added to your cart.', 'woocommerce'), $return_to, __('Continue Shopping', 'woocommerce') );
+	
+	return $message;
+}
+
 /**
- * billie functions and definitions
+ * billie functions and definitions ================================== All Billie theme related methods below, default with the theme.
  *
  * @package billie
  */
@@ -8,11 +41,11 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
+if ( ! isset( $content_width )) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'billie_setup' ) ) :
+if ( ! function_exists( 'billie_setup' )) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -51,13 +84,13 @@ function billie_setup() {
 	register_nav_menus( array(
 		'header' => __( 'Primary Menu', 'billie' ),
 		'social' => __( 'Social Menu', 'billie' ),
-	) );
+	));
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(	'search-form', 'comment-form', 'comment-list', 'gallery', 'caption') );
+	add_theme_support( 'html5', array(	'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 
 }
 endif; // billie_setup
@@ -74,7 +107,7 @@ if ( get_theme_mod( 'billie_hide_title') =="" ){
 	function billie_menu_title( $items, $args ) {
 	    if( $args->theme_location == 'header' ){
 
-	    	//$new_item       = array( '<li class="toptitle"><a href="' . esc_url( home_url( '/' ) ) .'" rel="home">' . get_bloginfo('name') .'</a></li>' );
+	    	//$new_item       = array( '<li class="toptitle"><a href="' . esc_url( home_url( '/' )) .'" rel="home">' . get_bloginfo('name') .'</a></li>' );
 	        $items          = preg_replace( '/<\/li>\s<li/', '</li>,<li',  $items );
 
 	        $array_items    = explode( ',', $items );
@@ -95,26 +128,6 @@ if ( get_theme_mod( 'billie_hide_title') =="" ){
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function billie_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar for posts', 'billie' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Front page Sidebar', 'billie' ),
-		'id'            => 'sidebar-3',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
 
 	register_sidebar( array(
 		'name'          => __( 'Footer widget area', 'billie' ),
@@ -124,30 +137,40 @@ function billie_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );
-
+	));
+	
 	register_sidebar( array(
-		'name'          => __( 'Footer copyright area', 'billie' ),
-		'id'            => 'sidebar-copyright',
-		'description'   => __( 'Place a text widget in this area and add your copyright text', 'billie'),
+		'name'          => __( 'Above Shop', 'billie' ),
+		'id'            => 'above-shop-section',
+		'description'   => __( 'This section will show above the products in the shop.', 'billie'),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
-	) );
+	));
+	
+	register_sidebar( array(
+		'name'          => __( 'Return Policies', 'billie' ),
+		'id'            => 'return-policies-section',
+		'description'   => __( 'This section will show below the cart at check out.', 'billie'),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	));
 
 }
 add_action( 'widgets_init', 'billie_widgets_init' );
 
 
-if ( ! function_exists( 'billie_fonts_url' ) ) :
+if ( ! function_exists( 'billie_fonts_url' )) :
 	function billie_fonts_url() {
 		$fonts_url = '';
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 
 		/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'billie' ) ) {
+		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'billie' )) {
 			$fonts[] = 'Montserrat';
 		}
 
@@ -166,7 +189,7 @@ if ( ! function_exists( 'billie_fonts_url' ) ) :
 
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
+				'family' => urlencode( implode( '|', $fonts )),
 				'subset' => urlencode( $subsets ),
 			), '//fonts.googleapis.com/css' );
 		}
@@ -179,14 +202,14 @@ endif;
  * Enqueue scripts and styles.
  */
 function billie_scripts() {
-	wp_enqueue_style( 'billie-style', get_stylesheet_uri(), array('dashicons') );
+	wp_enqueue_style( 'billie-style', get_stylesheet_uri(), array('dashicons'));
 	wp_enqueue_style( 'billie-fonts', billie_fonts_url(), array(), null );
 	wp_enqueue_style( 'open-sans');
 
 	wp_enqueue_script( 'billie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'billie-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' )) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
@@ -251,7 +274,7 @@ function billie_post_title( $title ) {
 	 *		Is the sidebar activated?
 	 *		Add 'no-sidebar' to the $classes array
 	*/
-	if ( is_front_page() && ! is_active_sidebar( 'sidebar-3' ) || is_home() && ! is_active_sidebar( 'sidebar-3' ) ) {
+	if ( is_front_page() && ! is_active_sidebar( 'sidebar-3' ) || is_home() && ! is_active_sidebar( 'sidebar-3' )) {
 		$classes[] = 'no-sidebar';
 	}
 
@@ -262,7 +285,7 @@ add_filter( 'body_class', 'billie_no_sidebars' );
 
 function billie_customize_css() {
 	echo '<style type="text/css">';
-	 if ( is_admin_bar_showing() ) {
+	 if ( is_admin_bar_showing()) {
 	 	?>
 	 	.main-navigation{top:32px;}
 
@@ -280,33 +303,33 @@ function billie_customize_css() {
 	echo '.site-title, .site-description{color:#' . get_header_textcolor() . ';} ';
 
 	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) {
+	if ( ! empty( $header_image )) {
 	?>
 		.site-header {
-		background-size: <?php esc_attr_e( get_theme_mod('billie_header_bgsize', 'cover') ); ?>;
+		background-size: <?php esc_attr_e( get_theme_mod('billie_header_bgsize', 'cover')); ?>;
 		}
 
 	<?php
 	/* No header image has been chosen, check for background color: */
 	}else{
-		if( get_theme_mod('billie_header_bgcolor') ){
-			echo '.site-header { background:' . esc_attr( get_theme_mod('billie_header_bgcolor', '#9cc9c7') ) . ';}';
+		if( get_theme_mod('billie_header_bgcolor')){
+			echo '.site-header { background:' . esc_attr( get_theme_mod('billie_header_bgcolor', '#9cc9c7')) . ';}';
 			echo '#action:hover, #action:focus{text-shadow:none;}';
 		}
 	}
 
 	//Call to Action text color
 	if( get_theme_mod( 'billie_action_color' ) <> ' ') {
-		echo '#action, #action a{ color:' . esc_attr( get_theme_mod('billie_action_color', '#000000') ) . ';}';
+		echo '#action, #action a{ color:' . esc_attr( get_theme_mod('billie_action_color', '#000000')) . ';}';
 	}
 
 	//Call to Action background color
 	if( get_theme_mod( 'billie_action_bgcolor' ) <> '') {
-		echo '#action, #action a{background:#' . esc_attr( get_theme_mod('billie_action_bgcolor', 'none') ) . ';}';
+		echo '#action, #action a{background:#' . esc_attr( get_theme_mod('billie_action_bgcolor', 'none')) . ';}';
 	}
 
 	// If avatars are enabled, alter the css:
-	if ( get_option( 'show_avatars' ) ) {
+	if ( get_option( 'show_avatars' )) {
 		echo '.comment-metadata{
 			margin-left:70px;
 			display:block;

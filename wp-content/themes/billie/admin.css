@@ -17,8 +17,7 @@
 	font-size:20px;
 	font-size:2.0rem; 
 	text-decoration:none;
-	margin:50px 0 25px 0;
-	font-family: 'Montserrat', sans-serif;	
+	margin:50px 0 25px 0;	
 	letter-spacing: 2px; 
 }
 
@@ -37,7 +36,6 @@
 	padding:26px;
 	font-size:14px;
 	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
 	z-index:99; 
 	height:auto;
 }
