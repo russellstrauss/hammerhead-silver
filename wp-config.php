@@ -20,8 +20,8 @@
 
 //define('RELOCATE', true);
 
-define('DB_NAME', 'hammerhe_wrdp1');
-define('DB_USER', 'hammerhe_wrdp1');
+define('DB_NAME', 'russell_hammerhe_wrdp1');
+define('DB_USER', 'russell_hhs_user');
 define('DB_PASSWORD', 'EZsDNwLGpIPKi4E');
 define('DB_HOST', 'localhost');
 
