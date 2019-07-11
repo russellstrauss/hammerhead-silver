@@ -10,8 +10,10 @@
 				justify-content: center;
 			}
 			
-			li {
-				
+			.swiper-slide {
+				display: inline;
+				margin: 10px;
+
 				@include mobile-only {
 					display: block;
 					text-align: center;
