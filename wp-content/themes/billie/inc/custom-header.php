@@ -12,7 +12,7 @@
  */
 function billie_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'billie_custom_header_args', array(
-		'default-image'          => get_template_directory_uri() . 'assets/img/Black-Outline-Logo.png',
+		'default-image'          => get_template_directory_uri() . '/assets/img/Black-Outline-Logo.png',
 		'default-text-color'     => '000000',
 		'flex-height'            => true,
 		'flex-width'             => true,

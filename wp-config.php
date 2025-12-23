@@ -18,12 +18,14 @@
  * @package WordPress
  */
 
-//define('RELOCATE', true);
+// Site URL configuration for local development
+define('WP_HOME', 'http://local.hammerheadsilver.com:8080');
+define('WP_SITEURL', 'http://local.hammerheadsilver.com:8080');
 
 define('DB_NAME', 'russell_hammerhe_wrdp1');
 define('DB_USER', 'russell_hhs_user');
 define('DB_PASSWORD', 'EZsDNwLGpIPKi4E');
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');

@@ -77,9 +77,10 @@
 					?>
 			<?php
 			}
-			if ( !get_theme_mod('billie_hide_search') ){
-				get_search_form();
-			}
+			// Search form hidden - removed per request
+			// if ( !get_theme_mod('billie_hide_search') ){
+			// 	get_search_form();
+			// }
 			?>
 
 		</div><!-- .site-branding -->

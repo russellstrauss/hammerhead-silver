@@ -340,3 +340,18 @@ function billie_customize_css() {
 	echo '</style>' . "\n";
 }
 add_action( 'wp_head', 'billie_customize_css');
+
+/**
+ * Disable srcset for missing thumbnails to prevent memory issues
+ * Simply removes srcset attribute when thumbnails might be missing
+ */
+function billie_disable_srcset_for_missing_thumbnails( $sources, $size_array, $image_src, $image_meta, $attachment_id ) {
+	// Only disable srcset on shop pages to avoid memory issues
+	if ( ! function_exists( 'is_shop' ) || ! is_shop() ) {
+		return $sources;
+	}
+	
+	// Return empty array to disable srcset (WordPress will use the main image)
+	return array();
+}
+add_filter( 'wp_calculate_image_srcset', 'billie_disable_srcset_for_missing_thumbnails', 999, 5 );
